@@ -21,7 +21,7 @@ public class UserDetails {
 	/*when you make the fetch type as eager,all objects of the entities will be loaded at one time only and 
 	even after closing the session,if you try to access the object,it doesnt throws any error and you get the complete
 	log of elements.*/
-
+	//@ElementCollection(fetch=FetchType.LAZY)
 	@ElementCollection(fetch=FetchType.EAGER)
 	@JoinTable(name="USER_ADDRESS",joinColumns=@JoinColumn(name="USER_ID"))
 	private Collection<Address> userAddress=new ArrayList<Address>();
