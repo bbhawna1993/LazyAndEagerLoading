@@ -37,6 +37,9 @@ public class HibernateTest {
 		session=sessionFactory.openSession();
 		user=(UserDetails)session.get(UserDetails.class,1);
 		session.close();
+
+		//you'll get LazyInitializationException,if fetch type is lazy(default),
+		//if fetch type is eager,no exception.
 		System.out.println(user.getUserAddress().size());
 
 	}
